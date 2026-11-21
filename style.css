@@ -1,0 +1,126 @@
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: #eef2ff;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --maxw: 760px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, .06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); }
+
+/* ===== 顶栏：左上角头像 ===== */
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.avatar {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  overflow: hidden;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.header-text h1 { font-size: 22px; font-weight: 700; }
+.header-text .subtitle { color: var(--muted); font-size: 14px; margin-top: 2px; }
+
+/* ===== 主体 ===== */
+.container { max-width: var(--maxw); margin: 0 auto; padding: 32px 20px 48px; }
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+section h2 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+section p { color: var(--muted); }
+
+/* ===== 研究兴趣卡片 ===== */
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.interest-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-decoration: none;
+  color: var(--text);
+  background: #fafbfc;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+}
+.interest-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  border-color: var(--accent);
+}
+.interest-card h3 { font-size: 16px; margin-bottom: 6px; }
+.interest-card p { font-size: 14px; color: var(--muted); margin-bottom: 12px; }
+.card-link { font-size: 13px; font-weight: 600; color: var(--accent); }
+
+/* ===== 工作列表 ===== */
+.back { display: inline-block; margin-bottom: 16px; font-size: 14px; text-decoration: none; }
+.work-list { list-style: none; }
+.work-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.work-item:last-child { border-bottom: none; }
+.work-item h3 { font-size: 15px; margin-bottom: 4px; }
+.work-item p { font-size: 14px; color: var(--muted); }
+.work-item a { font-size: 13px; font-weight: 600; }
+
+/* ===== footer ===== */
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 24px 20px 48px;
+}
+
+/* 响应式 */
+@media (max-width: 560px) {
+  .header-inner { flex-direction: column; text-align: center; }
+  .interest-grid { grid-template-columns: 1fr; }
+}
