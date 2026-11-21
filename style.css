@@ -126,6 +126,27 @@ section p { color: var(--muted); }
 }
 .file-btn:hover { opacity: .8; }
 
+/* ===== 社交账号 ===== */
+.social-links { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 999px;
+  transition: transform .15s, opacity .15s;
+}
+.social-btn:hover { transform: translateY(-2px); opacity: .9; }
+.bilibili {
+  background: #FB7299;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(251, 114, 153, .35);
+}
+.social-btn svg { flex-shrink: 0; }
+
 /* ===== footer ===== */
 .site-footer {
   text-align: center;
